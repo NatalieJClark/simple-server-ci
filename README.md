@@ -47,7 +47,7 @@ To deploy with Exoframe (Maker's toy cloud hosting system):
 # Install exoframe
 ; npm install exoframe -g
 
-# Log in to the Makers exoframe server (this uses a `.pem` file given to me by Makers)
+# Log in to the Makers exoframe server (this uses a .pem file given to me by Makers)
 ; exoframe login https://exoframe.xf.mkrs.link -k path/to/key.pem
 Endpoint URL updated!
 Logging in to: https://exoframe.xf.mkrs.link
@@ -65,7 +65,7 @@ No deployments found on https://exoframe.xf.mkrs.link!
 ; exoframe deploy
 
 # We can see the container start running by looking at the logs of the ID
-; exoframe logs ID # Use the ID from the output of `exoframe deploy`
+; exoframe logs ID # Use the ID from the output of the deploy command
 
 # Visit the URL to see the app running
 ; open https://natalieclark-simple.xf.mkrs.link
