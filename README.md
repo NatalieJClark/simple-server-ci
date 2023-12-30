@@ -15,7 +15,7 @@ I used this project to:
 - [x] Learn to explain how containerisation helps with deployment.
 - [x] Learn to deploy a container to a toy cloud hosting system.
 
-## How Do I Set It Up?
+## Setup
 
 To set up this project:
 
@@ -63,6 +63,9 @@ No deployments found on https://exoframe.xf.mkrs.link!
 
 # Deploy the app
 ; exoframe deploy
+
+# We can see the container start running by looking at the logs of the ID
+; exoframe logs ID # Use the ID from the output of `exoframe deploy`
 
 # Visit the URL to see the app running
 ; open https://natalieclark-simple.xf.mkrs.link
