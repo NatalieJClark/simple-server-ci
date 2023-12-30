@@ -1,0 +1,5 @@
+{
+  "name": "docker_simple_server",
+  "domain": "natalieclark-simple.xf.mkrs.link",
+  "port": "5000"
+}
