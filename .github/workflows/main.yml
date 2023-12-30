@@ -1,4 +1,4 @@
-#  This code to cet up Cpntinuous Integration:
+#  ------ This code to set up Continuous Integration: ------
 # # The name of the workflow
 # name: Build and Test
 
@@ -34,7 +34,7 @@
 #           pipenv run pytest
 
 
-# This code to set up Continuous Deployment:
+# ------ This code to set up Continuous Deployment: ------
 # The name of the workflow
 name: Test and Deploy
 
