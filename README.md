@@ -66,4 +66,7 @@ No deployments found on https://exoframe.xf.mkrs.link!
 
 # Visit the URL to see the app running
 ; open https://natalieclark-simple.xf.mkrs.link
+
+# When you want to update your server with the latest code, run:
+; exoframe deploy --update
 ```
