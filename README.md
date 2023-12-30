@@ -18,15 +18,43 @@ I used this project to learn to:
 
 ## Setup
 
-To set up this project:
+To set up this project and run it locally:
 
 ```bash
-# Clone this repo
 ; pipenv install
 ; pipenv shell
 ; pytest           # Run the tests
 ; python app.py    # Run the server
 ```
+To deploy with Exoframe (Maker's toy cloud hosting system):
+```bash
+# Install NodeJS
+; brew install node
+
+# Install exoframe
+; npm install exoframe -g
+
+# Log in to the Makers exoframe server (this uses a .pem file given to me by Makers)
+; exoframe login https://exoframe.xf.mkrs.link -k path/to/key.pem
+Endpoint URL updated!
+Logging in to: https://exoframe.xf.mkrs.link
+? Username: # use natalieclark
+Successfully logged in!
+
+# Check it works
+; exoframe ls 
+No deployments found on https://exoframe.xf.mkrs.link!
+
+# Deploy the app
+; exoframe deploy
+
+# We can see the container start running by looking at the logs of the ID
+; exoframe logs ID # Use the ID from the output of the deploy command
+
+# Visit the URL to see the app running
+; open https://natalieclark-simple-ci.xf.mkrs.link  
+```
+
 To practise CI-CD workflow:
 ```bash
 # 1. Create a new branch in your local repository.
