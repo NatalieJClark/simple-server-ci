@@ -1,75 +1,57 @@
-# Docker Simple Server
+# Simple Server CI/CD
 
 ## Introduction
 
-- I made this project for Makers Module 5 - Cloud Deployment: Containerising & Deploying
+- I made this project for Makers Module 5 - Cloud Deployment: Shipping CI/CD
 - This is a simple web server that serves a single route.
 - It shows the user a `Hello, world!` message.
 - It is containerised with Docker using the `Dockerfile`.
 - It uses Exoframe (Maker's toy cloud hosting system) to deploy to the cloud.
+- It uses [GitHub Actions](https://docs.github.com/en/actions) to set up CI/CD with the config file `.github/workflows/main.yml`.
+- A generated Exoframe deployment token is used to grant permission to deploy.
 
 ## Objectives
 
-I used this project to:
-- [x] Learn to containerise a web server using Docker.
-- [x] Learn to explain how containerisation helps with deployment.
-- [x] Learn to deploy a container to a toy cloud hosting system.
+I used this project to learn to:
+- [x] Explain what continuous integration is and why it is used.
+- [x] Explain what continuous deployment is and why it is used.
 
 ## Setup
 
 To set up this project:
 
 ```bash
+# Clone this repo
 ; pipenv install
 ; pipenv shell
 ; pytest           # Run the tests
 ; python app.py    # Run the server
 ```
-
-To containerise using Docker:
-
+To practise CI-CD workflow:
 ```bash
-# Make sure Docker is running
-# Use the Dockerfile to build the Docker image
-; docker build --tag my-flask-app .
+# 1. Create a new branch in your local repository.
+; git checkout -b your-branch-name
 
-# See the image in Docker's internal database
-; docker images
+# 2. Make some changes to make a test fail.
 
-# Run the image as a new container
-; docker run --publish 5001:5000 my-flask-app
-```
-To deploy with Exoframe (Maker's toy cloud hosting system):
-```bash
-# Install NodeJS
-; brew install node
+# 3. Commit and push those changes to a remote branch.
+; git add .
+; git commit -m "commit message"
+; git push -u origin your-branch-name
 
-# Install exoframe
-; npm install exoframe -g
+# 4. Create a pull (merge) request
+  # - When you push your changes it will give you a link to submit a pull request.
+  # - Or, open up this repository and look for the 'Pull Requests' tab. There should be a notice in there.
+  # - Or you can create a new PR for your branch with the big green button.
 
-# Log in to the Makers exoframe server (this uses a .pem file given to me by Makers)
-; exoframe login https://exoframe.xf.mkrs.link -k path/to/key.pem
-Endpoint URL updated!
-Logging in to: https://exoframe.xf.mkrs.link
-? Username: # use natalieclark
-Successfully logged in!
+# 5. See that the build has failed and you'll need to fix your failure:
+  # a) Fix the failure.
+  # b) Commit the fix.
+  # c) Push the fix (to the same branch).
 
-# Check it works
-; exoframe ls 
-No deployments found on https://exoframe.xf.mkrs.link!
+# 6. See the PR update, the build run and pass.
 
-# Configure the app to deploy
-; exoframe config -d natalieclark-simple.xf.mkrs.link --port 5000
+# 7. Merge the changes.
 
-# Deploy the app
-; exoframe deploy
-
-# We can see the container start running by looking at the logs of the ID
-; exoframe logs ID # Use the ID from the output of the deploy command
-
-# Visit the URL to see the app running
-; open https://natalieclark-simple.xf.mkrs.link
-
-# When you want to update your server with the latest code, run:
-; exoframe deploy --update
+# 8. See the workflow pass on the main branch after integration.
 ```
